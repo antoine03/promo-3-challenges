@@ -22,9 +22,8 @@ end
 def short_words(array, max_length)
   # TODO: Take and array of words, return the array of words not exceeding max_length characters
   #       You should use Enumerable#reject
-  array.reject  do |word|
-    word.length < max_length
-  end
+  array.reject { |word| word.length > max_length }
+
 end
 
 def first_under(array, limit)
@@ -49,6 +48,9 @@ end
 def sorted_pairs(array)
   # TODO: Reorganize an array into slices of 2 elements, and sort each slice alphabetically.
   #       You should make use of Enumerable#each_slice
+result= []
+array.each_slice(2) {|couple| result << couple.sort}
+result
 end
 
 
