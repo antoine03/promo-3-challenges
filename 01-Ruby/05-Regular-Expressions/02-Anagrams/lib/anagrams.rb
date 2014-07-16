@@ -23,3 +23,4 @@ def anagrams_on_steroids?(a_string, another_string)
   end
   a_string_hash.all? { |key, value| a_string_hash[key] == another_string_hash[key] }
 end
+
