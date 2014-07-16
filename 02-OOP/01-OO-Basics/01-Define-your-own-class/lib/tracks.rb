@@ -1,7 +1,5 @@
 class Tracks
-  attr_accessor :artist
-  attr_accessor :title
-  attr_accessor :duration
+  attr_accessor :artist, :title, :duration
 
   def initialize(artist, title, duration)
     @artist = artist
