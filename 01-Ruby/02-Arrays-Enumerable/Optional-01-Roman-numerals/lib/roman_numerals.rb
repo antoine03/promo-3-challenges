@@ -14,8 +14,8 @@ end
 
 def new_roman_numeral(an_integer)
   #TODO: translate integer in roman number - modern-style way
-  arabic_numbers = [1, 5, 10, 50, 100, 500, 1000]
-  roman_numbers = ["I", "V", "X", "L", "C", "D", "M"]
+  arabic_numbers = [1000, 500, 100, 50, 10, 5, 1]
+  roman_numbers = ["M", "D", "C", "L", "X", "V", "I"]
 
   roman_string = ""
 
