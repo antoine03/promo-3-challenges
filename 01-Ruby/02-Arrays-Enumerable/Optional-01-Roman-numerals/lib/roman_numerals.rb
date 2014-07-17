@@ -14,7 +14,33 @@ end
 
 def new_roman_numeral(an_integer)
   #TODO: translate integer in roman number - modern-style way
+  arabic_numbers = [1, 5, 10, 50, 100, 500, 1000]
+  roman_numbers = ["I", "V", "X", "L", "C", "D", "M"]
 
+  roman_string = ""
+
+  arabic_numbers.each_with_index do |value, index|
+    if (an_integer*5) / (value) == 9 && value.to_s.chars.first == "5"
+    quotient = an_integer / value
+      if quotient == 9
+        roman_string += roman_numbers[index] + roman_numbers[index-2]
+      break
+      else
+      roman_string += roman_numbers[index+1] + roman_numbers[index-1]
+      an_integer = an_integer % (arabic_numbers[index+1])
+      end
+    else
+      quotient = an_integer / value
+      an_integer = an_integer % value
+      if quotient == 4
+        roman_string += roman_numbers[index] + roman_numbers[index-1]
+      elsif quotient >= 1
+        roman_string += roman_numbers[index]*quotient
+      end
+
+    end
+  end
+  roman_string
 end
 
 puts new_roman_numeral(19)
