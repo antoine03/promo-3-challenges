@@ -21,7 +21,11 @@ def get_posts
   posts = DB.execute('SELECT * FROM posts')
 
   puts '-' * 50
+<<<<<<< HEAD
   puts '%-3s %-15s %-16s %s' % %w[# Name Source\ URL Rating]
+=======
+  puts '%-3s %-15s %-20s %-30s %s' % ['#', 'Name', 'Source URL', 'Created At', 'Rating']
+>>>>>>> 56bb70681e2594f68796a84853debe0562f0f006
 
   posts.each do |post|
     puts '%-3d %-15s %-16s %s' % [post['id'], post['name'], post['source_url'], post['created_at'], post['rating']]
